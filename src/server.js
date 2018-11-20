@@ -24,9 +24,9 @@ function setListeners(socket) {
 	socket.on('new player', data => {
 		io.emit('receive message', { type: 'connect', nickname: data.nickname });
 		socket.playerData = Object.assign({}, data, { index: socket.index });
-		connections.filter(connection => connection.index !== socket.index)
-			.forEach(connection => connection.emit('create player', socket.playerData))
-			.map(player => player.playerData)
+		const filteredConnections = connections.filter(connection => connection.index !== socket.index);
+		filteredConnections.forEach(connection => connection.emit('create player', socket.playerData));
+		filteredConnections.map(player => player.playerData)
 			.forEach(data => socket.emit('create player', data));
 	});
 
