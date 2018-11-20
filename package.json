@@ -1,0 +1,37 @@
+{
+  "name": "desolation-server",
+  "version": "1.0.0",
+  "description": "WebSocket server for Desolation project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests\"",
+    "start": "node ./src/server.js",
+    "start:dev": "nodemon --exec babel-node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desolation-team/desolation-server.git"
+  },
+  "author": "Dzianis Reznik, Dzmitriy Prudnikau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desolation-team/desolation-server/issues"
+  },
+  "homepage": "https://github.com/desolation-team/desolation-server#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "passport": "^0.4.0",
+    "redis": "^2.8.0",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "eslint": "^5.9.0",
+    "nodemon": "^1.18.6"
+  }
+}
